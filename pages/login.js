@@ -1,24 +1,29 @@
-const LoginPage = (props) => {
-  return (
-    <>
-      <div className="container d-flex justify-content-center align-items-center h-100 w-100">
-        <div className="bg-secondary p-3 px-4 rounded">
+import React from 'react';
+import SVGSocial from '../assets/img/undraw_social_life.svg'
+export default class Login extends React.Component {
+  render () {
+    return (
+      <div className="flex-1 p-5 m-5 d-flex align-items-center justify-content-center">
+        <div className="mr-5">
+          <h4 className="faded-red" >Welcome</h4>
+          <h1 style={{ fontWeight: 600 }} className="bright-gray mb-4" >Smart Aquarium</h1>
           <div>
-            <p className="m-0 text-center white">LOGIN</p>
-            <p className="m-0 text-center white">SMART AQUARIUM</p>
-          </div>
-          <div className="input-group-sm mb-3 mt-3">
-            <input className="form-control mb-2" placeholder="Nama Pengguna" />
-            <input className="form-control" placeholder="Kata Sandi" />
-          </div>
-          <div className="d-flex justify-content-between">
-            <button type="button" class="btn btn-sm btn-info">Register</button>
-            <button type="button" class="btn btn-sm btn-info">Login</button>
+            <div className="mb-3">
+              <label style={{ fontSize: 13 }} className="gray m-0" for="login-field">Username</label>
+              <input placeholder="Input your username"  className="form-control bright-gray p-0"  id="login-field" />
+            </div>
+            <div className="mb-5">
+              <label style={{ fontSize: 13 }} className="gray m-0" for="login-field">Password</label>
+              <input  type="password" placeholder="Input your password" className="form-control bright-gray p-0"  id="login-field" />
+            </div>
+            <button style={{ fontSize: 14 }} type="button" className="btn btn-dark pl-5 pr-5">Submit</button>
+            <p style={{ fontSize: 14 }} className="mt-3">Doesn't have an account? <span className="pastel-red pointer">register here</span></p>
           </div>
         </div>
+        <div className="ml-5">
+          <SVGSocial width={500} />
+        </div>
       </div>
-    </>
-  );
-};
-
-export default LoginPage;
+    )
+  }
+}
