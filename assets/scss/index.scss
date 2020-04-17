@@ -1,0 +1,78 @@
+@import url('https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css');
+@import url('https://fonts.googleapis.com/css?family=Nunito&display=swap');
+
+// ================================== Replaced Style ================================== 
+
+.btn {
+  border-radius: 20px;
+}
+
+.form-control {
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+.form-control:focus {
+  box-shadow: unset;
+  border-color: #3F3D56;
+}
+
+// ================================== Global Style ==================================
+
+body, #__next, .main {
+  height: 100vh;
+}
+p, h1, h2, h3, h4, h5, span, label, button {
+  font-family: Nunito, sans-serif;
+  margin: 0;
+}
+.flex-1 {
+  flex: 1;
+}
+.pointer {
+  cursor: pointer;
+}
+
+// ================================== Global Layout ==================================
+
+body, #__next, .main {
+  height: 100vh;
+}
+
+// ================================== Global Color ==================================
+
+.white {
+  color: white;
+}
+.bg-white {
+  background-color: white;
+}
+
+.pastel-red {
+  color: #FF6C6F;
+}
+.bg-pastel-red {
+  background-color: #FF6C6F;
+}
+
+.faded-red {
+  color: #FF7D80;
+}
+.bg-faded-red {
+  background-color: #FF7D80;
+}
+
+.gray {
+  color: gray;
+}
+.bg-gray {
+  background-color: gray;
+}
+
+.bright-gray {
+  color: #3F3D56;
+}
+.bg-bright-gray {
+  background-color: #3F3D56;
+}
