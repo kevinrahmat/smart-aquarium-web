@@ -3,7 +3,7 @@ import React from 'react';
 export default class Navbar extends React.Component {
   render () {
     return (
-      <nav class="navbar navbar-expand-lg navbar-dark bg-pastel-red ">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-bright-gray ">
         <a class="navbar-brand" href="#">Smartify</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
