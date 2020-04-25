@@ -11,7 +11,7 @@ export default class Login extends React.Component {
     return (
       <div className="flex-1 p-5 m-5 d-flex align-items-center justify-content-center">
         <div className="mr-5">
-          <h4 className="faded-red" >Welcome</h4>
+          <h4 className="faded-red" >Login</h4>
           <h1 style={{ fontWeight: 600 }} className="bright-gray mb-4" >Smart Aquarium</h1>
           <div>
             <div className="mb-3">
