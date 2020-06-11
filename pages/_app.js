@@ -2,6 +2,7 @@ import React from 'react';
 import { Helmet } from "react-helmet";
 
 import '../assets/scss/index.scss';
+import '../node_modules/react-vis/dist/style.css';
 import { Navbar } from '../components'
 
 export default class HomePage extends React.Component {
