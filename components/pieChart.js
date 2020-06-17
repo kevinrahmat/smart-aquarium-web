@@ -2,8 +2,8 @@ import React, { PureComponent } from "react";
 import { PieChart, Pie, ResponsiveContainer, Cell } from "recharts";
 
 const data = [
-  { name: "Group A", value: 800 },
-  { name: "Group B", value: 200 },
+  { name: "Turbidity", value: 100 },
+  { name: "Transparent", value: 50 },
 ];
 const COLORS = ["#0088FE", "transparent"];
 

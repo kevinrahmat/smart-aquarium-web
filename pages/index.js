@@ -56,7 +56,7 @@ export default class Dashboard extends React.Component {
                 </div>
                 <div className="d-flex mt-3 flex-1 justify-content-between align-items-center shadow-sm p-3 pl-5 pr-5 bg-white rounded background-gradient-3">
                   <span className="white title">Minimum Turbidity</span>
-                  <span className="white title">40°C</span>
+                  <span className="white title">50 mpu</span>
                 </div>
               </div>
             </div>

@@ -1,3 +1,4 @@
+import React from 'react';
 import {
   AreaChart,
   Area,
@@ -14,8 +15,8 @@ function getRandomArbitrary(min, max) {
 
 const historyData = [];
 
-for (let i = 0; i < 20; i++) {
-  historyData.push({ name: `${i}.00`, temp: getRandomArbitrary(0, 40) });
+for (let i = 0; i < 24; i++) {
+  historyData.push({ time: `${i}.00`, temp: getRandomArbitrary(0, 40) });
 }
 
 const HistoryLineChart = () => (
@@ -25,7 +26,7 @@ const HistoryLineChart = () => (
       margin={{ top: 5, right: 20, bottom: 5, left: 0 }}
     >
       <CartesianGrid stroke="rgba(0,0,0,0.1)" strokeDasharray="3 3" />
-      <XAxis dataKey="name" />
+      <XAxis dataKey="time" />
       <YAxis />
       <Tooltip />
       <Area type="monotone" dataKey="temp" stroke="#DF533B" fill="#DF533B" />
