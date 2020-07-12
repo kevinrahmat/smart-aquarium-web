@@ -8,25 +8,52 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-const data = [
-  {
-    name: "Celcius",
-    temp: 590,
-  },
-  {
-    name: "Kelvin",
-    temp: 868,
-  },
-  {
-    name: "Fahrenheit",
-    temp: 1397,
-  },
-];
-
-export default class Example extends PureComponent {
+export default class BarChart extends PureComponent {
   static jsfiddleUrl = "https://jsfiddle.net/alidingling/shjsn5su/";
+  constructor() {
+    super()
+    this.state = {
+      data: [
+        {
+          name: "Celcius",
+          temp: 590,
+        },
+        {
+          name: "Kelvin",
+          temp: 868,
+        },
+        {
+          name: "Fahrenheit",
+          temp: 1397,
+        },
+      ],
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { current_value } = this.props;
+    if (prevProps.current_value !== current_value) {
+      this.setState({
+        data: [
+          {
+            name: "Celcius",
+            temp: current_value,
+          },
+          {
+            name: "Fahrenheit",
+            temp: (current_value * 9/5) + 32,
+          },
+          {
+            name: "Kelvin",
+            temp: current_value + 273.15,
+          },
+        ],
+      })
+    }
+  }
 
   render() {
+    const { data } = this.state;
     return (
       <ResponsiveContainer height={300}>
         <ComposedChart

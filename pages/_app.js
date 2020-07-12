@@ -1,9 +1,26 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
+import { FirebaseDatabaseProvider, FirebaseDatabaseNode } from "@react-firebase/database";
+
+var firebase = require('firebase/app');
+require('firebase/auth');
+require('firebase/database');
 
 import '../assets/scss/index.scss';
 import '../node_modules/react-vis/dist/style.css';
 import { Navbar } from '../components'
+
+
+const config = {
+  apiKey: "AIzaSyCHxff-nwKBq8dTe2CPotOCVk1SWvnviGU",
+  authDomain: "smart-aquarium-telkom.firebaseapp.com",
+  databaseURL: "https://smart-aquarium-telkom.firebaseio.com",
+  projectId: "smart-aquarium-telkom",
+  storageBucket: "smart-aquarium-telkom.appspot.com",
+  messagingSenderId: "768159757606",
+  appId: "1:768159757606:web:30a5a2f7e68847fffb3de7",
+  measurementId: "G-5GR49PTGGY"
+};
 
 export default class HomePage extends React.Component {
   constructor () {
@@ -32,7 +49,10 @@ export default class HomePage extends React.Component {
         </Helmet>
         <div id="body" className="h-100 w-100 d-flex flex-column">
           <Navbar />
-          <Component {...pageProps} query={query} />
+          <FirebaseDatabaseProvider firebase={firebase} {...config}>
+            <Component {...pageProps} query={query} />
+          </FirebaseDatabaseProvider>
+
         </div>
       </div>
     );
