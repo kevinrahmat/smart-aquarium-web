@@ -1,6 +1,6 @@
 import React from 'react';
 import { Helmet } from "react-helmet";
-import { FirebaseDatabaseProvider, FirebaseDatabaseNode } from "@react-firebase/database";
+import { FirebaseDatabaseProvider } from "@react-firebase/database";
 
 var firebase = require('firebase/app');
 require('firebase/auth');

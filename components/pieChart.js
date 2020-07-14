@@ -1,16 +1,35 @@
 import React, { PureComponent } from "react";
 import { PieChart, Pie, ResponsiveContainer, Cell } from "recharts";
 
-const data = [
-  { name: "Turbidity", value: 100 },
-  { name: "Transparent", value: 50 },
-];
 const COLORS = ["#0088FE", "transparent"];
 
 export default class TurbidityChart extends PureComponent {
   static jsfiddleUrl = "https://jsfiddle.net/alidingling/3Leoa7f4/";
+  constructor() {
+    super()
+    this.state = {
+      data: [
+        { name: "Turbidity", value: 100 },
+        { name: "Transparent", value: 50 },
+      ],
+    }
+  }
+
+  componentDidUpdate(prevProps) {
+    const { current_value } = this.props;
+    if (prevProps.current_value !== current_value) {
+      this.setState({
+        data: [
+          { name: "Turbidity", value: current_value },
+          { name: "Transparent", value: 100 - current_value },
+        ],
+      })
+    }
+  }
 
   render() {
+    const { current_value } = this.props;
+    const { data } = this.state;
     return (
       <ResponsiveContainer height={300} width={300}>
         <PieChart onMouseEnter={this.onPieEnter}>

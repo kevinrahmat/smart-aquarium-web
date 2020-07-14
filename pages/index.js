@@ -77,7 +77,7 @@ export default class Dashboard extends React.Component {
                         </div>
                         <div className="d-flex mt-3 flex-1 justify-content-between align-items-center shadow-sm p-3 pl-5 pr-5 bg-white rounded background-gradient-3">
                           <span className="white title">Minimum Turbidity</span>
-                          <span className="white title">50 mpu</span>
+                          <span className="white title">{turbidity_min_value} NTU</span>
                         </div>
                       </div>
                     </div>
@@ -88,7 +88,7 @@ export default class Dashboard extends React.Component {
                       <Title title="Current Controller Status" />
                       <div className="d-flex flex-column flex-1">
                         <div className="d-flex mt-3 flex-1 justify-content-between align-items-center shadow-sm p-3 pl-5 pr-5 bg-white rounded background-gradient-1">
-                          <span className="white title">VLS Status</span>
+                          <span className="white title">VLC Status</span>
                           <span className="white title">{vlc ? 'Working' : 'Not Working'}</span>
                         </div>
                         <div className="d-flex mt-3 flex-1 justify-content-between align-items-center shadow-sm p-3 pl-5 pr-5 bg-white rounded background-gradient-2">
@@ -108,9 +108,9 @@ export default class Dashboard extends React.Component {
                       className="shadow p-3 m-3 bg-white rounded"
                     >
                       <Title title="Turbidity Status" />
-                      <TurbidityChart />
+                      <TurbidityChart current_value={turbidity_current_value} />
                       <span style={{ position: "absolute", top: "51%", left: "46%", fontWeight: '600', color: '#8884d8' }}>
-                        80%
+                        80
                       </span>
                     </div>
                     <div className="flex-1 shadow p-3 m-3 bg-white rounded">
