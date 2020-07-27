@@ -8,6 +8,7 @@
     "start": "next start -p $PORT"
   },
   "dependencies": {
+    "@react-firebase/auth": "^0.2.10",
     "@react-firebase/database": "^0.3.11",
     "@svgr/webpack": "^5.3.1",
     "firebase": "^7.16.0",

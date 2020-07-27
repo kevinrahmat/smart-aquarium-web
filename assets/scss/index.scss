@@ -7,6 +7,16 @@
   border-radius: 20px;
 }
 
+.transparent-btn {
+  background: transparent;
+  border: transparent;
+}
+
+.transparent-btn:focus {
+  border: transparent;
+  outline: unset;
+}
+
 .form-control {
   border-top: 0;
   border-right: 0;

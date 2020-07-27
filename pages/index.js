@@ -39,7 +39,8 @@ export default class Dashboard extends React.Component {
           >
             {data => {
               const { isLoading = false, value } = data || {};
-              const { status = {}, temperature = {}, turbidity = {} } = value || {};
+              const { status = {}, temperature = {}, turbidity = {}, sensor = "{\"temperature\":0,\"turbidity\":0}" } = value || {};
+              const { temperature: temperature_current_value, turbidity: turbidity_current_value } = JSON.parse(sensor);
 
               const {
                 auto_mode = false,
@@ -48,12 +49,10 @@ export default class Dashboard extends React.Component {
                 vlc = false,
                } = status;
               const {
-                current_value: turbidity_current_value = 0,
                 min_value: turbidity_min_value = 0,
                 status: turbidity_status = false,
                } = turbidity;
               const {
-                current_value: temperature_current_value = 0,
                 min_value: temperature_min_value = 0,
                 status: temperature_status = false,
                } = temperature;
