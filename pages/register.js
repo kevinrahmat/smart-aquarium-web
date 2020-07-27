@@ -1,7 +1,6 @@
 import React from "react";
 import firebase from "firebase";
 import Router from "next/router";
-import { FirebaseAuthProvider } from "@react-firebase/auth";
 
 import { config } from "../config";
 import SVGFish from "../assets/img/undraw_fish_bowl.svg";

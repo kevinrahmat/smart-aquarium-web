@@ -134,6 +134,7 @@ export default class Controller extends React.Component {
                       >
                         <Title title="Pump" style={{ color: "white" }} />
                         <button
+                          disabled={auto_mode}
                           onClick={() => this.handleClickPump(status)}
                           className="flex-1 d-flex align-items-center justify-content-center transparent-btn"
                         >
@@ -152,6 +153,7 @@ export default class Controller extends React.Component {
                       >
                         <Title title="Heater" style={{ color: "white" }} />
                         <button
+                          disabled={auto_mode}
                           onClick={() => this.handleClickHeater(status)}
                           className="flex-1 d-flex align-items-center justify-content-center transparent-btn"
                         >
