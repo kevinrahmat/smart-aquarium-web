@@ -35,7 +35,7 @@ export default class Register extends React.Component {
   }
 
   handleClickRegister() {
-    Router.push("/login");
+    Router.push("/");
   }
 
   render() {

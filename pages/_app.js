@@ -54,9 +54,9 @@ export default class HomePage extends React.Component {
           <title>Smart Aquarium</title>
         </Helmet>
         <div id="body" className="h-100 w-100 d-flex flex-column">
-          <Navbar />
           <FirebaseAuthProvider firebase={firebase} {...config}>
             <FirebaseDatabaseProvider firebase={firebase} {...config}>
+              <Navbar />
               <Component {...pageProps} query={query} />
             </FirebaseDatabaseProvider>
           </FirebaseAuthProvider>
