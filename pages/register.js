@@ -46,7 +46,7 @@ export default class Register extends React.Component {
           <h1 style={{ fontWeight: 600 }} className="bright-gray mb-4">
             Smart Aquarium
           </h1>
-          <form>
+          <div>
             <div className="mb-3">
               <label
                 style={{ fontSize: 13 }}
@@ -133,7 +133,7 @@ export default class Register extends React.Component {
             <button
               onClick={this.handleClickSubmit.bind(this)}
               style={{ fontSize: 14 }}
-              type="submit"
+              type="button"
               className="btn btn-dark pl-5 pr-5"
             >
               Register
@@ -148,7 +148,7 @@ export default class Register extends React.Component {
                 login here
               </span>
             </p>
-          </form>
+          </div>
         </div>
         <div className="ml-5">
           <SVGFish width={500} />
