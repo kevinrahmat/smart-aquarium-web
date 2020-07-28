@@ -31,7 +31,7 @@ export default class Navbar extends React.Component {
         >
           <div className="navbar-nav">
             <Link href="/">
-              <a className="nav-link nav-link">Dashboard</a>
+              <a className="nav-link nav-link">Monitoring</a>
             </Link>
             <Link href="/controller">
               <a className="nav-link nav-link">Controller</a>

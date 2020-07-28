@@ -26,7 +26,7 @@ export default class Login extends React.Component {
       .auth()
       .signInWithEmailAndPassword(email, password)
       .catch(function (error) {
-        console.log(error);
+        alert(error.message);
       });
   }
 
@@ -42,7 +42,7 @@ export default class Login extends React.Component {
           <h1 style={{ fontWeight: 600 }} className="bright-gray mb-4">
             Smart Aquarium
           </h1>
-          <div>
+          <form>
             <div className="mb-3">
               <label
                 style={{ fontSize: 13 }}
@@ -88,7 +88,7 @@ export default class Login extends React.Component {
             <button
               onClick={this.handleClickSubmit.bind(this)}
               style={{ fontSize: 14 }}
-              type="button"
+              type="submit"
               className="btn btn-dark pl-5 pr-5"
             >
               Login
@@ -103,7 +103,7 @@ export default class Login extends React.Component {
                 register here
               </span>
             </p>
-          </div>
+          </form>
         </div>
         <div className="ml-5">
           <SVGSocial width={500} />
