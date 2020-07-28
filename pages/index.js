@@ -95,7 +95,7 @@ export default class Dashboard extends React.Component {
                             </div>
                             <div className="d-flex mt-3 flex-1 justify-content-between align-items-center shadow-sm p-3 pl-5 pr-5 bg-white rounded background-gradient-3">
                               <span className="white title">
-                                Minimum Turbidity
+                                Maximum Turbidity
                               </span>
                               <span className="white title">
                                 {turbidity_min_value} NTU
@@ -143,7 +143,7 @@ export default class Dashboard extends React.Component {
                             style={{
                               position: "absolute",
                               top: "51%",
-                              left: "46%",
+                              left: "49%",
                               fontWeight: "600",
                               color: "#8884d8",
                             }}

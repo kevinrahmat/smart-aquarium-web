@@ -20,8 +20,8 @@ export default class TurbidityChart extends PureComponent {
     if (prevProps.current_value !== current_value) {
       this.setState({
         data: [
-          { name: "Turbidity", value: current_value },
-          { name: "Transparent", value: 100 - current_value },
+          { name: "Turbidity", value: current_value * 33.3 },
+          { name: "Transparent", value: 100 - current_value * 33.3 },
         ],
       })
     }
