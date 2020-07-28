@@ -148,7 +148,7 @@ export default class Dashboard extends React.Component {
                               color: "#8884d8",
                             }}
                           >
-                            80
+                            {turbidity_current_value}
                           </span>
                         </div>
                         <div className="flex-1 shadow p-3 m-3 bg-white rounded">
