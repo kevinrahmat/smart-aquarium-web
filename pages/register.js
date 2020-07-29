@@ -139,7 +139,7 @@ export default class Register extends React.Component {
               Register
             </button>
             <p style={{ fontSize: 14 }} className="mt-3">
-              Doesn't have an account?{" "}
+              Already have an account?{" "}
               <span
                 onClick={this.handleClickRegister.bind(this)}
                 className="pastel-red pointer"

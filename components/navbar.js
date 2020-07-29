@@ -36,12 +36,6 @@ export default class Navbar extends React.Component {
             <Link href="/controller">
               <a className="nav-link nav-link">Controller</a>
             </Link>
-            {/* <Link href="/login">
-              <a className="nav-link nav-link">Login</a>
-            </Link>
-            <Link href="/register">
-              <a className="nav-link nav-link">Register</a>
-            </Link> */}
           </div>
           <IfFirebaseAuthed>
             {() => {
