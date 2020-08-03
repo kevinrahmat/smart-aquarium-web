@@ -41,11 +41,11 @@ export default class BarChart extends PureComponent {
           },
           {
             name: "Fahrenheit",
-            temp: (current_value * 9/5) + 32,
+            temp: (Number(current_value) * 9/5) + 32,
           },
           {
             name: "Kelvin",
-            temp: current_value + 273.15,
+            temp: Number(current_value) + 273.15,
           },
         ],
       })
