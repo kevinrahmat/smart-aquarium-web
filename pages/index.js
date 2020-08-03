@@ -3,7 +3,7 @@ import { FirebaseDatabaseNode } from "@react-firebase/database";
 import { IfFirebaseAuthed, IfFirebaseUnAuthed } from "@react-firebase/auth";
 import { HistoryLineChart, TurbidityChart, TempChart } from "../components";
 
-import Login from '../components/login';
+import Login from "../components/login";
 
 const Title = (props) => {
   return (
@@ -48,10 +48,6 @@ export default class Dashboard extends React.Component {
                     turbidity = {},
                     sensor = '{"temperature":0,"turbidity":0}',
                   } = value || {};
-                  const {
-                    temperature: temperature_current_value,
-                    turbidity: turbidity_current_value,
-                  } = JSON.parse(sensor);
 
                   const {
                     auto_mode = false,
@@ -62,10 +58,12 @@ export default class Dashboard extends React.Component {
                   const {
                     min_value: turbidity_min_value = 0,
                     status: turbidity_status = false,
+                    value: temperature_current_value = 0,
                   } = turbidity;
                   const {
                     min_value: temperature_min_value = 0,
                     status: temperature_status = false,
+                    value: turbidity_current_value = 0,
                   } = temperature;
 
                   return (
@@ -77,14 +75,6 @@ export default class Dashboard extends React.Component {
                         >
                           <Title title="Current Monitoring Status" />
                           <div className="d-flex flex-column flex-1">
-                            <div className="d-flex mt-3 flex-1 justify-content-between align-items-center shadow-sm p-3 pl-5 pr-5 bg-white rounded background-gradient-1">
-                              <span className="white title">
-                                Controller Mode
-                              </span>
-                              <span className="white title">
-                                {auto_mode ? "Auto" : "Manual"}
-                              </span>
-                            </div>
                             <div className="d-flex mt-3 flex-1 justify-content-between align-items-center shadow-sm p-3 pl-5 pr-5 bg-white rounded background-gradient-2">
                               <span className="white title">
                                 Minimum Temperature
@@ -110,9 +100,11 @@ export default class Dashboard extends React.Component {
                           <Title title="Current Controller Status" />
                           <div className="d-flex flex-column flex-1">
                             <div className="d-flex mt-3 flex-1 justify-content-between align-items-center shadow-sm p-3 pl-5 pr-5 bg-white rounded background-gradient-1">
-                              <span className="white title">VLC Status</span>
                               <span className="white title">
-                                {vlc ? "Working" : "Not Working"}
+                                Controller Mode
+                              </span>
+                              <span className="white title">
+                                {auto_mode ? "Auto" : "Manual"}
                               </span>
                             </div>
                             <div className="d-flex mt-3 flex-1 justify-content-between align-items-center shadow-sm p-3 pl-5 pr-5 bg-white rounded background-gradient-2">
@@ -167,7 +159,7 @@ export default class Dashboard extends React.Component {
         </IfFirebaseAuthed>
         <IfFirebaseUnAuthed>
           {() => {
-            return <Login />
+            return <Login />;
           }}
         </IfFirebaseUnAuthed>
       </>
