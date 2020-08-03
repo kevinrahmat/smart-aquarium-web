@@ -58,12 +58,12 @@ export default class Dashboard extends React.Component {
                   const {
                     min_value: turbidity_min_value = 0,
                     status: turbidity_status = false,
-                    value: temperature_current_value = 0,
+                    value: turbidity_current_value = 0,
                   } = turbidity;
                   const {
                     min_value: temperature_min_value = 0,
                     status: temperature_status = false,
-                    value: turbidity_current_value = 0,
+                    value: temperature_current_value = 0,
                   } = temperature;
 
                   return (
