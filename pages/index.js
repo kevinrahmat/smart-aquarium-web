@@ -73,7 +73,7 @@ export default class Dashboard extends React.Component {
                           style={{ flex: "0.5" }}
                           className="shadow p-3 m-3 bg-white rounded d-flex flex-column"
                         >
-                          <Title title="Current Monitoring Status" />
+                        
                           <div className="d-flex flex-column flex-1">
                             <div className="d-flex mt-3 flex-1 justify-content-between align-items-center shadow-sm p-3 pl-5 pr-5 bg-white rounded background-gradient-2">
                               <span className="white title">
@@ -97,7 +97,7 @@ export default class Dashboard extends React.Component {
                           style={{ flex: "0.5" }}
                           className="shadow p-3 m-3 bg-white rounded d-flex flex-column"
                         >
-                          <Title title="Current Controller Status" />
+                         
                           <div className="d-flex flex-column flex-1">
                             <div className="d-flex mt-3 flex-1 justify-content-between align-items-center shadow-sm p-3 pl-5 pr-5 bg-white rounded background-gradient-1">
                               <span className="white title">
