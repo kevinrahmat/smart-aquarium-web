@@ -9,8 +9,8 @@ export default class TurbidityChart extends PureComponent {
     super()
     this.state = {
       data: [
-        { name: "Turbidity", value: 100 },
-        { name: "Transparent", value: 50 },
+        { name: "Turbidity", value: 0 },
+        { name: "Transparent", value: 100 },
       ],
     }
   }
