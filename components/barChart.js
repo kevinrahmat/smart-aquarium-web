@@ -66,7 +66,7 @@ export default class BarChart extends PureComponent {
             left: 20,
           }}
         >
-          <XAxis dataKey="temp" type="number" />
+          <XAxis dataKey="temp" type="number" stroke="transparent" />
           <YAxis dataKey="name" type="category" />
           <Tooltip />
           <Bar dataKey="temp" barSize={20} fill="#413ea0" />
