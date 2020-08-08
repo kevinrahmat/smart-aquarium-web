@@ -126,7 +126,7 @@ export default class Controller extends React.Component {
                                 style={{ flex: "0.5" }}
                                 className="shadow p-3 m-3 bg-white rounded d-flex flex-column"
                               >
-                                <Title title="Maximum Turbidity" />
+                                <Title title="Minimum Turbidity" />
                                 <div className="flex-1 d-flex align-items-center justify-content-center">
                                   <span className="headline-text">
                                     {turbidity_min_value}
