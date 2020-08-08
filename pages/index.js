@@ -110,13 +110,13 @@ export default class Dashboard extends React.Component {
                             <div className="d-flex mt-3 flex-1 justify-content-between align-items-center shadow-sm p-3 pl-5 pr-5 bg-white rounded background-gradient-2">
                               <span className="white title">Pump Status</span>
                               <span className="white title">
-                                {pump ? "Working" : "Not Working"}
+                                {pump ? "On" : "Off"}
                               </span>
                             </div>
                             <div className="d-flex mt-3 flex-1 justify-content-between align-items-center shadow-sm p-3 pl-5 pr-5 bg-white rounded background-gradient-3">
                               <span className="white title">Heater Status</span>
                               <span className="white title">
-                                {heater ? "Working" : "Not Working"}
+                                {heater ? "On" : "Off"}
                               </span>
                             </div>
                           </div>
