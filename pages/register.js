@@ -21,12 +21,22 @@ export default class Register extends React.Component {
     });
   }
 
+  sendUserEmailVerification () {
+    var user = firebase.auth().currentUser;
+    user.sendEmailVerification().then(function() {
+      console.log("email sent");
+    }).catch(function(error) {
+      console.log("email error");
+    });
+  }
+
   handleClickSubmit() {
     const { email, password } = this.state;
     firebase
       .auth()
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
+        // this.sendUserEmailVerification();
         Router.push("/");
       })
       .catch(function (error) {

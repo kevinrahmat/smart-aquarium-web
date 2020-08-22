@@ -3,9 +3,10 @@ import {
   FirebaseDatabaseNode,
   FirebaseDatabaseMutation,
 } from "@react-firebase/database";
+import firebase from "firebase/app";
 import { IfFirebaseAuthed, IfFirebaseUnAuthed } from "@react-firebase/auth";
 
-import Login from '../components/login';
+import Login from "../components/login";
 
 const Title = (props) => {
   const { style = {} } = props || {};
@@ -55,7 +56,27 @@ export default class Controller extends React.Component {
         `}</style>
 
         <IfFirebaseAuthed>
-          {() => {
+          {(data) => {
+            const {
+              isSignedIn = false,
+              user,
+              user: { emailVerified = false } = {},
+            } = data || {};
+            if (isSignedIn) {
+              if (!emailVerified) {
+                alert("Please verify your email address");
+                firebase.auth().signOut();
+                user
+                  .sendEmailVerification()
+                  .then(function () {
+                    console.log("email sent");
+                  })
+                  .catch(function (error) {
+                    console.log("email error");
+                  });
+                return <> </>;
+              }
+            }
             return (
               <FirebaseDatabaseNode path="/">
                 {(data) => {

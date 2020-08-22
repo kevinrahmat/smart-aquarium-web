@@ -38,7 +38,8 @@ export default class Navbar extends React.Component {
             </Link>
           </div>
           <IfFirebaseAuthed>
-            {() => {
+            {(params) => {
+              console.log(params);
               return (
                 <div className="navbar-nav pointer">
                   <a onClick={this.handleLogout.bind(this)} className="nav-link nav-link">Logout</a>
