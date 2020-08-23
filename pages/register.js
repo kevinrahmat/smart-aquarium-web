@@ -1,8 +1,8 @@
 import React from "react";
 import firebase from "firebase";
 import Router from "next/router";
+import PasswordStrengthBar from "react-password-strength-bar";
 
-import { config } from "../config";
 import SVGFish from "../assets/img/undraw_fish_bowl.svg";
 export default class Register extends React.Component {
   constructor() {
@@ -21,27 +21,38 @@ export default class Register extends React.Component {
     });
   }
 
-  sendUserEmailVerification () {
+  sendUserEmailVerification() {
     var user = firebase.auth().currentUser;
-    user.sendEmailVerification().then(function() {
-      console.log("email sent");
-    }).catch(function(error) {
-      console.log("email error");
-    });
+    user
+      .sendEmailVerification()
+      .then(function () {
+        console.log("email sent");
+      })
+      .catch(function (error) {
+        console.log("email error");
+      });
   }
 
   handleClickSubmit() {
-    const { email, password } = this.state;
-    firebase
-      .auth()
-      .createUserWithEmailAndPassword(email, password)
-      .then(() => {
-        // this.sendUserEmailVerification();
-        Router.push("/");
-      })
-      .catch(function (error) {
-        alert(error.message);
-      });
+    const { email, password, password_verification } = this.state;
+    if (password !== password_verification) {
+      alert("Password isn't not the same");
+    } else {
+      if (password.length < 8) {
+        alert("You have entered less than 8 characters for password");
+      } else {
+        firebase
+          .auth()
+          .createUserWithEmailAndPassword(email, password)
+          .then(() => {
+            // this.sendUserEmailVerification();
+            Router.push("/");
+          })
+          .catch(function (error) {
+            alert(error.message);
+          });
+      }
+    }
   }
 
   handleClickRegister() {
@@ -49,6 +60,8 @@ export default class Register extends React.Component {
   }
 
   render() {
+    const { password, password_verification } = this.state;
+
     return (
       <div className="flex-1 p-5 m-5 d-flex align-items-center justify-content-center">
         <div className="mr-5">
@@ -119,7 +132,7 @@ export default class Register extends React.Component {
                 id="login-field"
               />
             </div>
-            <div className="mb-5">
+            <div className="mb-2">
               <label
                 style={{ fontSize: 13 }}
                 className="gray m-0"
@@ -136,9 +149,10 @@ export default class Register extends React.Component {
                   })
                 }
                 placeholder="Input your password verification"
-                className="form-control bright-gray p-0"
+                className="form-control bright-gray p-0 mb-2"
                 id="login-field"
               />
+              <PasswordStrengthBar password={password} />
             </div>
             <button
               onClick={this.handleClickSubmit.bind(this)}
